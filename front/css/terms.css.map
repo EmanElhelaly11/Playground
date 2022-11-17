@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAM,CACF,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAC,OAAO,CACd,OAAO,CAAC,eAAe,CACvB,SAAE,CACE,KAAK,CAAE,OAAO,CACd,IAAI,CAAE,uCAAuC,CAEjD,aAAM,CACF,IAAI,CAAE,uCAAuC,CAEjD,uBAAS,CACL,UAAU,CAAC,MAAM,CAGjB,eAAC,CAEG,KAAK,CAAC,OAAO,CACb,IAAI,CAAE,uCAAuC",
+"sources": ["../../../parts_of_projects/football/scss/terms.scss"],
+"names": [],
+"file": "terms.css"
+}

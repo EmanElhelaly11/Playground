@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>REGISTER</title>
+  <link rel="stylesheet" type="text/css" href="style2.css">
+  <script type="text/javascript" src="home2.js"></script>
+</head>
+<body>
+  <div class="overlay">
+<!-- LOGN IN FORM by Omar Dsoky -->
+<form action="register.php" method="post">
+   <!--   con = Container  for items in the form-->
+   <div class="con">
+   <!--     Start  header Content  -->
+   <header class="head-form">
+      <h2>REGISTER</h2>
+      <!--     A welcome message or an explanation of the login form -->
+      <p>register here using your username and password</p>
+   </header>
+   <!--     End  header Content  -->
+   <br>
+   <p>Username and Password must be more than 5 characters</p>
+
+   <div class="field-set">
+     
+      <!--   user name -->
+         <span class="input-item">
+           <i class="fa fa-user-circle"></i>
+         </span>
+        <!--   user name Input-->
+         <input class="form-input" id="txt-input" type="text" name="username" placeholder="@UserName" name="usernamess" >
+     
+      <br>
+     
+           <!--   Password -->
+     
+      <span class="input-item">
+        <i class="fa fa-key"></i>
+       </span>
+      <!--   Password Input-->
+      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" >
+     
+<!--      Show/hide password  -->
+     <span>
+        <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
+     </span>
+     
+     
+      <br>
+<!--        buttons -->
+<!--      button LogIn -->
+      <button class="log-in" name="register"> Sing Up </button>
+   </div>
+  
+<!--   other buttons -->
+   <div class="other">
+<!--      Forgot Password button-->
+ 
+ <br />
+ <br />
+ 
+      <button class="btn submits frgt-pass">have account</button>
+<!--     Sign Up button -->
+      <button class="btn submits sign-up" name="login"><a href="login.html"> Log In 
+<!--         Sign Up font icon -->
+      <i class="fa fa-user-plus" aria-hidden="true"></i>
+      </button>
+<!--      End Other the Division -->
+   </div>
+     
+<!--   End Conrainer  -->
+  </div>
+  
+  <!-- End Form -->
+</form>
+</div>
+</body>
+</html>

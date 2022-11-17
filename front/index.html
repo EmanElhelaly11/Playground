@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="front/css/style.css">
+    <link rel="stylesheet" href="front/css/media.css">
+    <title>playground</title>
+</head>
+<body>
+    <!-- start navbar -->
+    <div class="nav">
+        <div class="container">
+            <div class="con-nav">
+                <div class="menu"><i class="fas fa-bars"></i></div>
+                <div class="con-links">
+                    <ul>
+                        <li><a href="#home" class="act">Home</a></li>
+                        <li><a href="play.php">Playgrounds</a></li>
+
+                    </ul>
+                </div>
+                <div class="con-links">
+                    <ul>
+                        <li><a href="form/login.html">Log In </a></li>
+                        <li><a href="form/register.html">Register </a></li>
+                    </ul>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start section carousel -->
+    <div class="section-one"id="home">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+            <div class="carousel-item active height-img">
+                <img src="front/img/one.jfif" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption  d-md-block">
+                <h2>Book A Playground</h2>
+                <p>Find A playground for any sport.</p>
+                <button><a href="play.php">View Playgrounds</a></button>
+                </div>
+            </div>
+            <div class="carousel-item height-img">
+                <img src="front/img/banner2.png" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption  d-md-block">
+                    <h2>Read About Us</h2>
+                    <p>Know more about our company.</p>
+                </div>
+            </div>
+            <div class="carousel-item height-img">
+                <img src="front/img/offer.png
+                " class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption  d-md-block">
+                    <h2>Contact Us</h2>
+                    <p>We work 24/7 for you !</p>
+                </div>
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- start section book a play ground -->
+    <div class="section-two"id="playgrounds">
+        <div class="container">
+            <h2>Book Your Prefered Playground</h2>
+            <div class="row">
+                <?php
+                    if(mysqli_num_rows($res) >0)
+                    {
+                        while($data=mysqli_fetch_array($res))
+                        {
+                            $playid=$data['id'];
+                            $playname=$data['name'];
+                            $playprice=$data['price'];
+                            $playimg=$data['img'];
+                ?>
+                <div class="col-md-6">                  
+                    <figure data-aos="fade-up"data-aos-delay="100">
+                        <div class="con-img">
+                            <img src="<?php echo $playimg;?>" alt="">
+                        </div>
+                        <div class="fle-hr">
+                            <div class="h3-p">
+                                <h3><?php echo $playname;?></h3>
+                                <p>miami center</p>
+                            </div>
+                            <span class="price"><?php echo $playprice ."hr";?></span>
+                        </div>
+                    </figure>
+                </div>
+                <?php
+                        }
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
+    
+    <!-- start section about us -->
+    <div class="section-four" id="about_us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p class="head">Lorem ipsum dolor sit amet Lorem ipsum dolor Rem necessitatibus dolore est nihil ea quidem non quia eum id expedita.</p>
+            <div class="dashed"></div>
+            <div class="con-p">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit Exercitationem saepe est fugiat expedita illo recusandae incidunt odit laboriosam at illum. Quas repudiandae saepe totam dignissimos doloremque, culpa iure tenetur repellat nemo animi rerum suscipit, quam beatae quis nihil. Minus, tempora?Ipsum rerum eum nemo, enim quasi reiciendis facere illum ad non ipsa, beatae ut, asperiores distinctio? Sint minus possimus unde quae, et hic distinctio dignissimos cumque placeat delectus soluta cupiditate nobis doloribus nisi fugit aliquid. Neque nostrum tempora excepturi qui sapiente totam?</p>
+            </div>
+        </div>
+    </div>
+    <!-- start section contact us -->
+    <div class="section-six">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"data-aos="fade-right"data-aos-delay="100">
+                    <div class="phone">
+                        <i class="fas fa-phone"></i>
+                        <div class="con-h3-p">
+                            <h3>Call Us</h3>
+                            <p>+0219873122</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"data-aos="fade-up"data-aos-delay="100">
+                    <div class="location">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <div class="con-h3-p">
+                            <h3>Egypt,Mahala,Sea street Second turn</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"data-aos="fade-left"data-aos-delay="100">
+                    <div class="email">
+                        <i class="fas fa-envelope"></i>
+                        <div class="con-h3-p">
+                            <h3>Or Send Us Message</h3>
+                            <p>name@example.com</p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- full page with navbar -->
+    <div class="full-nav">
+        <div class="con-nav-full">
+            <div class="close">&times;</div>
+            <ul>
+                <li><a href="#home" class="act">Home</a></li>
+                <li><a href="play.php">Playgrounds</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- full loading-->
+     <div class="full-loading">
+        <div class="loader">
+        <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_yIyBUk.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        </div>
+    </div> 
+    <!-- //button-to-top -->
+    <div class="to-top"><i class="fa fa-fighter-jet"></i></div>
+   
+ 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="front/js/index.js"></script>
+  <script>
+    AOS.init({
+          offset: 120, 
+  delay: 0, 
+        once: true,
+  duration: 700,
+    });
+  </script>
+</body>
+</html>

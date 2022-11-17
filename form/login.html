@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>LogIn</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="home.js"></script>
+</head>
+<body>
+  <div class="overlay">
+<!-- LOGN IN FORM by Omar Dsoky -->
+<form action="login.php" method="post"> 
+   <!--   con = Container  for items in the form-->
+   <div class="con">
+   <!--     Start  header Content  -->
+   <header class="head-form">
+      <h2>Log In</h2>
+      <!--     A welcome message or an explanation of the login form -->
+      <p>login here using your username and password</p><br>
+
+   </header>
+   <!--     End  header Content  -->
+   <br>
+   <p>Username and Password must be more than 5 characters</p>
+
+   <div class="field-set">
+     
+      <!--   user name -->
+         <span class="input-item">
+           <i class="fa fa-user-circle"></i>
+         </span>
+        <!--   user name Input-->
+         <input class="form-input"  type="text" name="username" placeholder="@UserName" >
+     
+      <br>
+     
+           <!--   Password -->
+     
+      <span class="input-item">
+        <i class="fa fa-key"></i>
+       </span>
+      <!--   Password Input-->
+      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" >
+     
+<!--      Show/hide password  -->
+     
+     <br >
+     <br />
+ <br />
+      ADMIN  <input type="radio" name="choose" value="admin"> .....OR .....
+ CLIENT <input type="radio" name="choose" value="client"> 
+      <br>
+      <span>
+        <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
+     </span>
+     <br>
+<!--        buttons -->
+<!--      button LogIn -->
+      <button class="log-in" name="login"> Log In </button>
+   </div>
+  
+<!--   other buttons -->
+   <div class="other">
+<!--      Forgot Password button-->
+      <button class="btn submits frgt-pass">dont have an account</button>
+<!--     Sign Up button -->
+      <button class="btn submits sign-up" name="register"><a href="register.php"> Sign Up 
+<!--         Sign Up font icon -->
+      <i class="fa fa-user-plus" aria-hidden="true"></i>
+      </button>
+<!--      End Other the Division -->
+   </div>
+     
+<!--   End Conrainer  -->
+  </div>
+  
+  <!-- End Form -->
+</form>
+</div>
+</body>
+</html>

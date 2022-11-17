@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="front/css/style.css">
+    <link rel="stylesheet" href="front/css/playgrounds.css">
+    <link rel="stylesheet" href="front/css/media.css">
+    <title>playground</title>
+</head>
+<body>
+     <!-- start navbar -->
+     <div class="nav">
+        <div class="container">
+            <div class="con-nav">
+               
+                <div class="menu"><i class="fas fa-bars"></i></div>
+                <div class="logo"><h3>Playgrounds Club</h3></div>
+                <div class="con-links">
+                    <ul>
+                        <li><a href="index.php" >Home</a></li>
+                        <li><a href="play.php" class="act">Playgrounds</a></li>
+                        <li><a href="out.php">Log Out</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- full page with navbar -->
+        <div class="full-nav">
+            <div class="con-nav-full">
+                <div class="close">&times;</div>
+                <ul>
+                    <li><a href="play.php">Home</a></li>
+                    <li><a href="#playgrounds">Playgrounds</a></li>
+                    <li><a href="sport.php">Sport Centers</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- start playgrounds -->
+        
+            <div class="section-two"id="playgrounds">
+            <div class="container">
+                <h4 class="h4-head">Playgrounds Club</h4>
+                <h2>Playgrounds</h2>
+                <p>Browse all the available playgrounds and make a reservation.</p>
+                <div class="dashed"></div>
+                <div class="row">
+                    <?php
+                    if(mysqli_num_rows($resplay) >0)
+                    {
+                        while($data=mysqli_fetch_array($resplay))
+                        {
+                            $playid=$data['id'];
+                            $playname=$data['name'];
+                            $playprice=$data['price'];
+                            $playimg=$data['img'];
+                ?>
+                    <div class="col-md-6">
+                        <?php
+                        if($playname =="Football Playground")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                               <a href="booked.php"/>
+                            <?php    
+                        }
+                        elseif($playname =="Swimming Pool")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                <a href="booked2.php"/>
+                            <?php        
+                        }
+                        elseif($playname =="Golf Playground")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                 <a href="booked3.php"/>
+                            <?php
+                        }
+                        elseif($playname =="Backetball Playground")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                 <a href="booked4.php"/>
+                            <?php
+                        }
+                        elseif($playname =="Gym Hole")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                 <a href="booked5.php"/>
+                            <?php
+                        }
+                        elseif($playname =="Wrestling Ring")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                 <a href="booked6.php"/>
+                            <?php
+                        }
+                        elseif($playname =="yoga hole")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                 <a href="booked7.php"/>
+                            <?php
+                        }
+                        elseif($playname =="playground for children")
+                        {
+                            $_SESSION['playid']=$playid;
+                            ?>
+                                 <a href="booked8.php"/>
+                            <?php
+                        }
+                        ?>
+                        <figure  data-aos="fade-right"data-aos-delay="100">
+                            <div class="con-img">
+                                <img src="<?php echo $playimg;?>" alt="">
+                            </div>
+                            <div class="fle-hr">
+                                <div class="h3-p">
+                                    <h3><?php echo $playname;?></h3>
+                                    <p>miami center</p>
+                                </div>
+                                <span class="price"><?php echo $playprice;?></span>
+                            </div>
+                          </figure>
+                        </a>
+                    </div>
+                <?php
+                        }
+                    }
+                ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+            <!-- start section social -->
+    <div class="section-six">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="phone"data-aos="fade-right"data-aos-delay="100">
+                        <i class="fas fa-phone"></i>
+                        <div class="con-h3-p">
+                            <h3>Call Us</h3>
+                            <p>+0219873122</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="location"data-aos="fade-up"data-aos-delay="100">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <div class="con-h3-p">
+                            <h3>Egypt,Mahala,Sea street Second turn</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"data-aos="fade-left"data-aos-delay="100">
+                    <div class="email">
+                        <i class="fas fa-envelope"></i>
+                        <div class="con-h3-p">
+                            <h3>Or Send Us Message</h3>
+                            <p>name@example.com</p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- full loading -->
+    <div class="full-loading">
+        <div class="loader">
+        <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_yIyBUk.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        </div>
+    </div>
+      <!-- //button-to-top -->
+      <div class="to-top"><i class="fa fa-fighter-jet"></i></div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="front/js/index.js"></script>
+     
+
+  <script>
+    AOS.init({
+          offset: 120, 
+  delay: 0, 
+        once: true,
+  duration: 700,
+    });
+  </script>
+</body>
+</html>
